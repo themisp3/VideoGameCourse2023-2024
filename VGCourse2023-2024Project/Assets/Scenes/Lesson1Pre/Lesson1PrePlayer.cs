@@ -6,7 +6,7 @@ public class Lesson1PrePlayer : MonoBehaviour
 {
     public float speed = 1.0f;
     public float laneSpeed = 1.0f;
-    int currentLane;
+    public int currentLane;
 
     // Start is called before the first frame update
     void Start()
