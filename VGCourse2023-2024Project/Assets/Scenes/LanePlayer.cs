@@ -6,25 +6,38 @@ using UnityEngine.UIElements;
 public class LanePlayer : MonoBehaviour
 {
     Transform myTransform;
-    float speed = 6;
+    [SerializeField] private float speed = 6;
+    [SerializeField] private float laneSpeed = 5;
+    int currentLane = 0;
+    public float laneWidth = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        print("Hello World 1");
-        Debug.Log("Hello World 3");
-
-        myTransform = GetComponent<Transform>();
-        //myTransform.position = new Vector3(myTransform.position.x, myTransform.position.y, 20f);
+        currentLane = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        print("Hello World 2");
-        float newX = myTransform.position.x;
-        float newY = myTransform.position.y;
-        float newZ = myTransform.position.z + speed * Time.deltaTime;
-        myTransform.position = new Vector3(newX, newY, newZ);
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (currentLane > -2)
+            {
+                currentLane--;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (currentLane < 2)
+            {
+                currentLane++;
+            }
+        }
+
+        float newX = transform.position.x + (currentLane * laneWidth - transform.position.x) * laneSpeed * Time.deltaTime;
+        float newY = transform.position.y;
+        float newZ = transform.position.z + speed * Time.deltaTime;
+        transform.position = new Vector3(newX, newY, newZ);
     }
 }

@@ -17,6 +17,7 @@ public class PreRunnerScore : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("collision");
         PreWallLine line = collision.gameObject.GetComponentInParent<PreWallLine>();
         if (line != null)
         {

@@ -272,7 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 150923435}
   speed: 3.2
-  rotateSpeed: 1
+  rotateSpeed: 100
   stoppingDistance: 0.2
   followingTimer: 7
 --- !u!54 &126306963

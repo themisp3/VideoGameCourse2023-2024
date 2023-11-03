@@ -5,7 +5,6 @@ using UnityEngine;
 public class PreRocket : PreGoToTarget
 {
     public float followingTimer = 3f;
-    
 
     protected override void Update()
     {
@@ -28,7 +27,7 @@ public class PreRocket : PreGoToTarget
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Col");
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             PreRocketPlayer player = collision.gameObject.GetComponent<PreRocketPlayer>();
             if (player != null)
@@ -45,6 +44,7 @@ public class PreRocket : PreGoToTarget
 
     void SelfDistract()
     {
+        //Destroy(this);
         Destroy(gameObject);
     }
 }

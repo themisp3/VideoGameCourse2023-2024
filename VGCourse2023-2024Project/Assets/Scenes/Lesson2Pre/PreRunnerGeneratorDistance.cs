@@ -5,7 +5,9 @@ using UnityEngine;
 public class PreRunnerGeneratorDistance : MonoBehaviour
 {
     public Transform player;
+    public GameObject test;
     public GameObject[] walls;
+    public List<GameObject> otherList;
     public float wallsDistance = 20;
     public int preloadWalls = 10;
     int index = 0;
