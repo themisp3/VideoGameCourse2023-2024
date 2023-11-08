@@ -15,6 +15,11 @@ public class InteractorClosest : MonoBehaviour
     void Start()
     {
         currentInteractable = null;
+
+        foreach (Component c in FindObjectsOfType<Component>())
+        {
+            Debug.Log(c);
+        }
     }
 
     // Update is called once per frame

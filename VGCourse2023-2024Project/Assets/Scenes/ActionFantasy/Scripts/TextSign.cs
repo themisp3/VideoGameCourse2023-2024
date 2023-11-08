@@ -24,11 +24,11 @@ public class TextSign : MonoBehaviour, IInteractable
 
     public void OnAbortInteract()
     {
-		indicator.SetActive(false); //hide
+        indicator.SetActive(false);
     }
 
     public void OnReadyInteract()
     {
-		indicator.SetActive(true); //show
+        indicator.SetActive(true);
     }
 }
